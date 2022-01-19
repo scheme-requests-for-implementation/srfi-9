@@ -1,23 +1,20 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
-<html>
+<html lang="en">
   <head>
     <title>SRFI 9: Defining Record Types</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
   </head>
 
   <body>
 
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>9: Defining Record Types</h1>
 
-Defining Record Types
+<p>by Richard Kelsey</p>
 
-<H1>Author</H1>
-
-Richard Kelsey
-
-<H1>Status</H1>
+<h2>Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+9+at+srfi+dotschemers+dot+org">srfi-9@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-9">archive</a>.</p>
 <UL>
@@ -27,14 +24,14 @@ Richard Kelsey
 <LI>Final: 1999-09-09
 </UL>
 
-<H1>Abstract</H1>
+<h2>Abstract</h2>
 
 This SRFI describes syntax for creating new data types, called record types.
 A predicate, constructor, and field accessors and modifiers are defined for
 each record type.  Each new record type is distinct from all existing types,
 including other record types and Scheme's predefined types.
 
-<H1>Rationale</H1>
+<h2>Rationale</h2>
 
 Many Scheme implementations provide means for creating new types,
  usually called either records or structures.
@@ -55,7 +52,7 @@ This has the following advantages:
  defining occurrence of each identifier.
 </UL>
 
-<H1 id="define-record-type">Specification</H1>
+<h2 id="define-record-type">Specification</h2>
 
 The syntax of a record-type definition is:
 
@@ -147,7 +144,7 @@ and <code>PARE?</code> to be a predicate for <code>:PARE</code>s.
     (kar k))                --&gt; 3
 </PRE>
 
-<H1>Implementation</H1>
+<h2>Implementation</h2>
 
 This code is divided into three layers.  In top-down order these are:
 <OL>
@@ -163,7 +160,7 @@ to modify the type of a record).  Access to these procedures should be
 restricted.
 </OL>
 
-<H2>Syntax definitions</H2>
+<h3>Syntax definitions</h3>
 
 <PRE>
 ; Definition of DEFINE-RECORD-TYPE
@@ -197,7 +194,7 @@ restricted.
        (define modifier (record-modifier type 'field-tag))))))
 </PRE>
 
-<H2>Record types</H2>
+<h3>Record types</h3>
 
 <PRE>
 ; We define the following procedures:
@@ -312,7 +309,7 @@ restricted.
           (error "modifier applied to bad value" type tag thing)))))
 </PRE>
 
-<H2>Records</H2>
+<h3>Records</h3>
 
 <PRE>
 ; This implements a record abstraction that is identical to vectors,
@@ -370,7 +367,7 @@ restricted.
   (vector-set! record (+ index 1) value))
 </PRE>
 
-<H1>Copyright</H1>
+<h2>Copyright</h2>
 
 <p>Copyright (C) Richard Kelsey (1999). All Rights Reserved. </p>
 
